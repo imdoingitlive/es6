@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>let and const</title>
+</head>
+<body>
+<script type="text/javascript">
+  var width = 10434324890;
+  // var can be reassigned and updated
+  console.log(width);
+  width = 399;
+  console.log(width);
+
+  // no errors for creating the same variable twice within the same scope
+  var width = 399;
+  console.log(width);
+
+  // var is function scope, if not in a function then they are global
+  function setWidth() {
+    var width = 200;
+    console.log(width);
+  }
+  setWidth();
+
+  // won't grab the var from inside the function
+  console.log(width);
+
+  // this if will allow the var dogYears to leak out side of it since it is not a function
+  var age = 89;
+  if(age > 39) {
+    var dogYears = age * 7;
+    console.log(`You are ${dogYears} dog years old!`);
+  }
+
+  // let and const are scoped to the block level
+  // block statements are any time there is { }
+  
+  // this will not let the var in the if leak out
+  if (age > 44) {
+    let years = age / 5;
+    console.log(`${years} has some decimals...`);
+  }
+
+  let height = 803482903;
+  const key = 'stuff'
+</script>
+</body>
+</html>
