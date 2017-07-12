@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    // let and const can be used to replace IIFE
+
+    // this works but the window has a name attribute
+    var name = 'Bob';
+    // here an IIFE creates the var same as above but it doesn't leak to global scope and replace the name of the Window
+    (function() {
+      var name = 'Bob';
+    })();
+
+    // this will be global scope
+    const name = 'Bob';
+    // but instead of IIFE, just create a block
+    {
+      const name = 'Bob';
+      // only way to see this is with a console log
+      console.log(name);
+    }
+
+    // this will run after 1 second and only print the current value of i rather than all values
+    for (var i = 0; i < 10; i++) {
+      setTimeout(function() {
+        console.log('The number is: ' + i);
+      }, 1000);
+    }
+
+    // by changing var to let the function will print out every value of i
+    for (let i = 0; i < 10; i++) {
+      setTimeout(function() {
+        console.log('The number is: ' + i);
+      }, 1000);
+    }
+
+  </script>
+</body>
+</html>
