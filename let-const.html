@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    const key = 'fdsaf';
+    let points = 89;
+    let winner = false;
+
+    // this won't work because of let, unlike var
+    // cannot be redeclared twice inside of the same scope
+    let points = 83;
+
+    if(points > 40) {
+      // due to being different scope from the winner variable above this works
+      // block scope, and the above winner is window scope
+      let winner = true;
+    }
+
+    // works and updates the variable
+    points = 39;
+    // const variables cannot be updated
+    key = 'fdsajkl;';
+
+    // properties of a const variable can be updated
+    const person = {
+      name: 'Bob',
+      age: 89
+    }
+
+    // this will work to update the object above
+    person.age = 34;
+
+    // to make an object unable to be changed use freeze() method
+    const bob = Object.freeze(person);
+
+  </script>
+</body>
+</html>
