@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+  </title>
+</head>
+<body>
+  <script type="text/javascript">
+    // this can access the var food from temporal dead zone because it was declared but it cannot access the value
+    // will print undefined
+    console.log(food);
+    var food = 'pizza';
+    // this will print the value of food
+    console.log(food);
+
+    // this won't work because let and const do not allow temporal dead zone
+    console.log(yummy);
+    const yummy = 'pizza';
+
+  </script>
+</body>
+</html>
