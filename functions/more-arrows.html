@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>More Arrows</title>
+</head>
+<body>
+<script type="text/javascript">
+  
+  const race = '100m Dash';
+  const winners = ['Hunter Gath', 'Singa Song', 'Dude Mah'];
+
+  // if the key value pair are the same word you can just type it once, as is the case for "race"
+  // this takes the data above and maps them to objects
+  const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}))
+
+
+
+  const ages = [43,46,62,73,22,74,24,87,12,88];
+  // here old will only return ages above 60
+  const old = ages.filter(age => age >= 60);
+  console.log(old);
+
+</script>
+</body>
+</html>
