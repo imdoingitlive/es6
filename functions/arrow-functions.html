@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrow Functions</title>
+</head>
+<body>
+<script type="text/javascript">
+  const names = ['bob', 'mary', 'tom'];
+  // ARROW FUNCTIONS
+    // much more concise
+    // implicit returns
+    // doesn't rebind the value of this when inside of another function
+    // are always anonymous
+
+  // this will add the string to the end of each item in the array
+  const fullNames = names.map(function(name) {
+    return `${name} smith`;
+  })
+
+  console.log(fullNames);
+
+  // re-written using an arrow function
+  const fullNames2 = names.map((name) => {
+    return `${name} smith`;
+  });
+
+  console.log(fullNames2);
+
+  // can be done without the () if there is only one argument
+  const fullNames3 = names.map(name => {
+    return `${name} smith`;
+  });
+
+  console.log(fullNames3);
+
+  // here we use an implicit return
+  const fullNames4 = names.map(name => `${name} smith`);
+
+  console.log(fullNames4);
+
+  // no argument requires using the ()
+  const fullNames5 = names.map(() => `bob smith`);
+
+  console.log(fullNames5);
+
+  // named function
+  function myFunc() {
+
+  }
+
+  // can name an arrow function by putting it inside of a variable
+  const myNew = (name) => { alert(`Hello ${name}!`) }
+
+  myNew('Bob');
+</script>
+</body>
+</html>
